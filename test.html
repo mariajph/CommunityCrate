@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration - Community Crate</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        nav {
+            background-color: #007bff;
+            padding: 10px;
+            margin-bottom: 20px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        nav a:hover {
+            color: #f0f0f0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .role-options {
+            display: flex;
+            gap: 20px;
+        }
+
+        .role-options label {
+            display: flex;
+            align-items: center;
+        }
+
+        .role-options input {
+            margin-right: 8px;
+        }
+
+        .button-options {
+            display: flex;
+            justify-content: space-between;
+            gap: 8px;
+        }
+
+        button {
+            flex: 1;
+            background-color: #4caf50;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Add a style for validation alert */
+        .validation-alert {
+            color: #ff0000;
+            margin-top: 8px;
+        }
+    </style>
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById('password').value;
+            var confirmPassword = document.getElementById('confirm-password').value;
+            var validationAlert = document.getElementById('validation-alert');
+
+            if (password !== confirmPassword) {
+                validationAlert.innerHTML = "Passwords do not match. Please make sure your passwords match.";
+                return false; // Prevent form submission
+            }
+
+            var phone = document.getElementById('phone').value;
+            var phoneRegex = /^\d{10}$/; // Phone number should be 10 digits
+
+            // You can add more validation checks here as needed
+
+            // Clear validation alert
+            validationAlert.innerHTML = "";
+            return true; // Form is valid, proceed with submission
+        }
+    </script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Community Crate</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Restaurants.html">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Volunteers.html">Volunteers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Beneficiary.html">Beneficiary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About Us.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <form action="your-server-side-registration-script.php" method="post" onsubmit="return validateForm()">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+
+            <label for="location">Location:</label>
+            <input type="text" id="location" name="location" required>
+
+            <label for="phone">Phone:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="role">Role:</label>
+            <div class="role-options">
+                <label>
+                    <input type="radio" id="restaurant" name="role" value="restaurant" required>
+                    Restaurant
+                </label>
+
+                <label>
+                    <input type="radio" id="volunteer" name="role" value="volunteer" required>
+                    Volunteer
+                </label>
+
+                <label>
+                    <input type="radio" id="beneficiary" name="role" value="beneficiary" required>
+                    Beneficiary
+                </label>
+            </div>
+
+            <!-- Validation alert area -->
+            <div id="validation-alert" class="validation-alert"></div>
+
+            <div class="button-options">
+                <button type="submit">Register</button>
+                <button type="button">Cancel</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

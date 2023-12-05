@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Community Crate</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        label,
+        input,
+        select {
+            color: white;
+        }
+
+        body,
+        h1,
+        h2,
+        h3,
+        p,
+        figure,
+        ul,
+        li,
+        nav {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a href="Home.html"> <img src="logo.png" alt="Community Crate Logo"></a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="Home.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Restaurants.html">Restaurants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Volunteers.html">Volunteers</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Beneficiary.html">Beneficiary</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Contact.html">Contact</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="About Us.html">About Us</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</head>
+
+<body>
+    <main class="home-main">
+        <div class="container mt-5">
+            <h1>Volunteer Page</h1>
+            <form id="volunteerForm" action="" method="post">
+                <div class="form-group">
+                    <label for="availability">Availability:</label>
+                    <select class="form-control" id="availability" name="availability">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="location">Location:</label>
+                    <select class="form-control" id="location" name="location">
+                        <option value="londonline">londonline</option>
+                        <option value="Brightsgroove">Brightsgroove</option>
+
+                    </select>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+
+    </main>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+/* Remove the default underline for navbar links */
+.navbar-nav .nav-link {
+    text-decoration: none;
+}
+
+/* Add some margin between navbar items */
+.navbar-nav .nav-item {
+    margin-right: 0px;
+    align-items: left;
+}
+
+/* Add a custom style for the active link */
+.navbar-nav .nav-item.active .nav-link {
+    color: #f7c823;
+    font-weight: bold;
+}
+
+.navbar img{
+max-height: 50px;
+padding: 0px;
+}
+
+/* Style the Home section */
+.container h1 {
+    font-size: 2.5rem;
+    color: #f7c823;
+}
+
+.container p {
+    font-size: 1.25rem;
+    color: #444;
+}
+
+.home-main {
+    min-height: 90vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(background.jpg);
+    background-position: centre;
+    background-size: cover;
+    position: relative;
+}
+
+.text-box {
+    width: 90%;
+    color: #fff;
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+
+.home-button {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 20px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+
+main form label{
+    text-emphasis-color: #fff;
+}
